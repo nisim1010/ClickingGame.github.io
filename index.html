@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicking Game</title>
+    <link rel="stylesheet" href="exprement.css">
+    <script src="exprement.js"></script>
+</head>
+<body onload="Start() + Values()" style="background-color:#BFD1FF;">
+<h1 style="text-align:center;margin-top: 60px;" id="title">Clicking Game<br>25 cents = 0.25 Dollar</h1>
+<div id="stats">
+    <p id="result"></p>
+    <p id="rebrithvalue"></p>
+    <p id="pointsleft"></p>
+    <p id="multypler"></p>
+    <p id="demo">ComboX0</p>
+</div>
+
+<button type="button" id="openshop" style="position: fixed; right:0;margin-right: 5px;">Open Shop</button>
+<div id="shop1">
+    <button type="button" id="closeshop1">Close Shop</button>
+    <button type="button" id="upgrade1" onclick="Upgrade(0.5,500) + Values()">
+        Upgrade + 0.5<br>Cost 500 Dollar
+    </button>
+    <button type="button" id="upgrade2" onclick="Upgrade(1.5,1400) + Values()">
+        Upgrade + 1.5<br>Cost 1,400 Dollar
+    </button>
+    <button type="button" id="upgrade3" onclick="Upgrade(2.5,2400) + Values()">
+        Upgrade + 2.5<br>Cost 2,400 Dollar
+    </button>
+    <button type="button" id="upgrade4" onclick="Upgrade(5,4700) + Values()">
+        Upgrade + 5<br>Cost 4,700 Dollar
+    </button>
+    <button type="button" id="upgrade5" onclick="Upgrade(10,9300) + Values()">
+        Upgrade + 10<br>Cost 9,300 Dollar
+    </button>
+    <button type="button" id="upgrade6" onclick="Upgrade(25,23000) + Values()">
+        Upgrade + 25<br>Cost 23,000 Dollar
+    </button>
+    <button type="button" id="upgrade6" onclick="Upgrade(50,34000) + Values()">
+        Upgrade + 50<br>Cost 34,000 Dollar
+    </button>
+    <button type="button" id="nextpage1">Next Page 1/2</button>
+</div>
+
+<div id="shop2">
+    <button type="button" id="closeshop2">Close Shop</button>
+    <button type="button" id="upgrade1" onclick="Upgrade(100,50000) + Values()">
+        Upgrade + 100<br>Cost 50,000 Dollar
+    </button>
+    <button type="button" id="upgrade2" onclick="Upgrade(300,140000) + Values()">
+        Upgrade + 300<br>Cost 140,000 Dollar
+    </button>
+    <button type="button" id="upgrade3" onclick="Upgrade(500,240000) + Values()">
+        Upgrade + 500<br>Cost 240,000 Dollar
+    </button>
+    <button type="button" id="upgrade4" onclick="Upgrade(1000,470000) + Values()">
+        Upgrade + 1,000<br>Cost 470,000 Dollar
+    </button>
+    <button type="button" id="upgrade5" onclick="Upgrade(2000,930000) + Values()">
+        Upgrade + 2,000<br>Cost 930,000 Dollar
+    </button>
+    <button type="button" id="upgrade6" onclick="Upgrade(5000,2300000) + Values()">
+        Upgrade + 5,000<br>Cost 2,300,000 Dollar
+    </button>
+    <button type="button" id="upgrade6" onclick="Upgrade(7500,3400000) + Values()">
+        Upgrade + 7,500<br>Cost 3,400,000 Dollar
+    </button>
+    <button type="button" id="lastpage1">Last Page 2/2</button>
+</div>
+
+
+    <div id="clicker">
+        <button type="button" id="cents" onclick="Click() + Values()" style="background-image:url(imges/25cents.png);display:block;"></button>
+        <button type="button" id="dollar" onclick="Click() + Values()" style="background-image:url(imges/Dollar.jpg);border-radius: 0%;display:none;width:937px;"></button>
+        <button type="button" id="gold" onclick="Click() + Values()"></button>
+        <button type="button" id="bitcoin" onclick="Click() + Values()" style="background-image:url(imges/BitCoin2.png);display:none;"></button>
+        <button type="button" id="dogecoin" onclick="Click() + Values()" style="background-image:url(imges/dogecoin2.png);display:none;"></button>
+        <button type="button" id="metacoin" onclick="Click() + Values()" style="background-image:url(imges/Metacoin.png);display:none;"></button>
+    </div>
+
+    <div id="prestige">
+    <button type="button" onclick="Reset() + Values()">Prestige</button>
+  <br>  <button type="button" id="prestigeshopb">Prestige Shop</button>
+
+<div id="prestigeshop">
+    <button id="lev2">Dollar<br>Need 5 prestiges</button>
+    <button id="lev3">Gold<br>Need 15 prestiges</button>
+    <button id="lev4">BitCoin<br>Need 25 prestiges</button>
+    <button id="lev5">DogeCoin<br>Need 50 prestiges</button>
+    <button id="lev6">MetaBite<br>Need 100 prestiges</button>
+</div>
+</div>
+<div id="notification-bar">
+    <p id="notification">Welcome To The Game</p>
+  </div>
+</body>
+<script>
+    var shopbutton = document.getElementById("openshop");
+    var shopmodle1 = document.getElementById("shop1");
+    var shopmodle2 = document.getElementById("shop2");
+    var closebutton1 = document.getElementById("closeshop1");
+    var closebutton2 = document.getElementById("closeshop2");
+    var nextbutton1 = document.getElementById("nextpage1");
+    var lastbutton1 = document.getElementById("lastpage1");
+
+    shopbutton.onclick = function() {
+        shopmodle1.style.display = "block";
+    }
+
+    closebutton1.onclick = function() {
+        shopmodle1.style.display = "none";
+        shopmodle2.style.display = "none";
+    }
+    closebutton2.onclick = function() {
+        shopmodle1.style.display = "none";
+        shopmodle2.style.display = "none";
+    }
+
+    nextbutton1.onclick = function() {
+        shopmodle1.style.display = "none";
+        shopmodle2.style.display = "block";
+    }
+    lastbutton1.onclick = function() {
+        shopmodle1.style.display = "block";
+        shopmodle2.style.display = "none";
+    }
+
+</script>
+<script>
+    var button = document.getElementById("prestigeshopb");
+    var shop = document.getElementById("prestigeshop");
+
+    button.onclick = function() {
+        if(shop.style.display == "none") {
+            shop.style.display = "block";
+        }
+        else {
+            shop.style.display = "none";
+        }
+    }
+</script>
+<script>
+ var main = document.getElementById("clicker");
+ var level1 = document.getElementById("cents");
+ var level2 = document.getElementById("dollar");
+ var level3 = document.getElementById("gold");
+ var level4 = document.getElementById("bitcoin");
+ var level5 = document.getElementById("dogecoin");
+ var level6 = document.getElementById("metacoin");
+ var dollarb = document.getElementById("lev2");
+ var goldb = document.getElementById("lev3");
+ var bitcoinb = document.getElementById("lev4");
+ var dogecoinb = document.getElementById("lev5");
+ var metacoinb = document.getElementById("lev6");
+
+ dollarb.onclick = function() {
+     if(localStorage.rebrith >= 5) {
+     level1.style.display = "none";
+     level2.style.display = "block";
+     level3.style.display = "none";
+     level4.style.display = "none";
+     level5.style.display = "none";
+     level6.style.display = "none";
+     document.getElementById("title").innerHTML = "Clicking Game<br>1 Dollar = 1 Dollar";
+     prestigelevel = 1;
+     Values();
+     }
+ }
+
+ goldb.onclick = function() {
+     if(localStorage.rebrith >= 15) {
+     level1.style.display = "none";
+     level2.style.display = "none";
+     level3.style.display = "block";
+     level4.style.display = "none";
+     level5.style.display = "none";
+     level6.style.display = "none";
+     document.getElementById("title").innerHTML = "Clicking Game<br>1 GoldBar = 12 Dollar";
+     prestigelevel = 3;
+     Values();
+     }
+ }
+
+ bitcoinb.onclick = function() {
+    if(localStorage.rebrith >= 25) {
+     level1.style.display = "none";
+     level2.style.display = "none";
+     level3.style.display = "none";
+     level4.style.display = "block";
+     level5.style.display = "none";
+     level6.style.display = "none";
+     document.getElementById("title").innerHTML = "Clicking Game<br>1 BitCoin = 20 Dollar";
+     prestigelevel = 5;
+     Values();
+    }
+ }
+
+ dogecoinb.onclick = function() {
+    if(localStorage.rebrith >= 50) {
+     level1.style.display = "none";
+     level2.style.display = "none";
+     level3.style.display = "none";
+     level4.style.display = "none";
+     level5.style.display = "block";
+     level6.style.display = "none";
+     document.getElementById("title").innerHTML = "Clicking Game<br>1 DogeCoin = 40 Dollar";
+     prestigelevel = 10;
+     Values();
+    }
+ }
+
+ metacoinb.onclick = function() {
+    if(localStorage.rebrith >= 100) {
+     level1.style.display = "none";
+     level2.style.display = "none";
+     level3.style.display = "none";
+     level4.style.display = "none";
+     level5.style.display = "none";
+     level6.style.display = "block";
+     document.getElementById("title").innerHTML = "Clicking Game<br>1 MetaBite = 80 Dollar";
+     prestigelevel = 20;
+     Values();
+    }
+ }
+
+</script>
+
+</html>
